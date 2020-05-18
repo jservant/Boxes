@@ -34,25 +34,28 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<TileController>().burnt == false) 
+        if (collision.gameObject.GetComponent<TileController>().burnt == false) // If tile stepped on isn't burnt (gone)
         {
             if (!moveW) moveW = true;
             if (!moveE) moveE = true;
             if (!moveN) moveN = true;
             if (!moveS) moveS = true;
-            canMove = true;
+            // Movement is successful
+            canMove = true; // Reenable movement
         }
-        else
+        else 
         {
             if (!moveW) { transform.position += new Vector3(distance, 0); moveW = true; Debug.Log("West"); }
             if (!moveE) { transform.position -= new Vector3(distance, 0); moveE = true; Debug.Log("East"); }
             if (!moveN) { transform.position -= new Vector3(0, distance); moveN = true; Debug.Log("North"); }
             if (!moveS) { transform.position += new Vector3(0, distance); moveS = true; Debug.Log("South"); }
+            // Reverses direction if player moves to a tile that's been burnt (change to "if the player moves to nothing"?)
+            // DOESN'T reenable movement, so if the player lands on nothing they lose
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canMove = false;
+        canMove = false; // Disables movement upon leaving a tile
     }
 }
