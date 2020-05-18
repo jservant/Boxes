@@ -6,13 +6,15 @@ public class TileController : MonoBehaviour
 {
     SpriteRenderer sr;
     public Sprite[] sprites;
-    public bool Turn = false;
-    public bool collided = false;
+    public bool Turn = false; // Tells tiles that there was input and disables when it updates it's sprite
+    public bool collided = false; // Turns on when player touches tile
+    public bool burnt;
     public int currentSprite;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        currentSprite = 7;
     }
 
     private void Update()
@@ -20,25 +22,16 @@ public class TileController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)
             || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)
             || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)
-            || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) { Turn = true; }
+            || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) { Turn = true; } // If player does anything activate this
 
-        if (Turn && collided)
+        if (Turn && collided) // If player did anything AND the tile has been touched
         {
-            if (currentSprite == 0)
-            {
-                Turn = false;
-            }
             if (currentSprite <= 6)
             {
                 currentSprite--;
                 sr.sprite = sprites[currentSprite];
                 Turn = false;
-            }
-            else if (currentSprite == 7)
-            {
-                // make wall code
-            }
-            
+            }            
             //switch (currentSprite)
             //{
             //    case 1:
@@ -61,12 +54,23 @@ public class TileController : MonoBehaviour
             //        break;
             //}
         }
+        if (currentSprite <= 0)
+        {
+            sr.sprite = null;
+            burnt = true;
+            collided = false;
+            Turn = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collided = true;
-        currentSprite = Random.Range(4, 6);
-        sr.sprite = sprites[currentSprite];
+        if (!burnt && !collided)
+        {
+            collided = true; // Tells game tile has been touched to start burn sequence
+            Turn = false;
+            currentSprite = Random.Range(5, 7); // SHOULD BE pick a random die count between 4 and 6
+            sr.sprite = sprites[currentSprite]; // Set sprite to that value
+        }
     }
 }

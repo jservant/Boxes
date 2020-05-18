@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2211815713354106289, guid: 01fd09966e9c1e948b0de8a60a6cff1f,
+  m_Sprite: {fileID: 3911365511593546558, guid: 01fd09966e9c1e948b0de8a60a6cff1f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,14 +93,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.025, y: 1}
     newSize: {x: 1.025, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,13 +122,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -3331006199415023591, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
-  - {fileID: 6506357562933352422, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
-  - {fileID: 796252152395671831, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
-  - {fileID: 1933070583535273695, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
-  - {fileID: 1525941512178852344, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
-  - {fileID: -8515979207820105225, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
-  - {fileID: -7439568574158365006, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
-  - {fileID: 2211815713354106289, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
+  - {fileID: 3911365511593546558, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
+  - {fileID: -7412955246522141969, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
+  - {fileID: -247193180890497870, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
+  - {fileID: 5085159031120605688, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
+  - {fileID: -2221402515198169542, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
+  - {fileID: -5589289008028625550, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
+  - {fileID: -9173356243454288411, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
   Turn: 0
+  collided: 0
+  burnt: 0
   currentSprite: 0
