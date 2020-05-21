@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3088122775231457014}
   m_Layer: 0
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,5 +131,4 @@ MonoBehaviour:
   - {fileID: -9173356243454288411, guid: 01fd09966e9c1e948b0de8a60a6cff1f, type: 3}
   Turn: 0
   collided: 0
-  burnt: 0
   currentSprite: 0
