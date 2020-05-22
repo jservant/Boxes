@@ -2,42 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameController
 {
     public GameObject[] tiles;
     private bool win = false;
-
-    public bool lose = false;
-    public bool Win
-    {
-        //tiles = GameObject.FindGameObjectsWithTag("Tile"); // Makes an array of all tiles in scene
-        set { }
-    }
-
-    public GameObject losePanel;
-    public GameObject winPanel;
-    public GameObject pressR;
-    public GameObject pressSpace;
+    private bool lose = false;
     [Space()]
     public int numOfTilesTouched = 0;
 
-    private void Start()
+    public bool Lose
     {
-    }
-
-    void Update()
-    {
-        if (numOfTilesTouched == tiles.Length) { win = true; }
-
-        if (!win && lose)
+        get
         {
-            losePanel.SetActive(true);
-            pressR.SetActive(true);
+            return lose;
         }
-        if (win)
+        set
         {
-            winPanel.SetActive(true);
-            pressSpace.SetActive(true);
+            lose = value;
+            if (lose)
+            {
+                GameObject.FindWithTag("Player").SetActive(false);
+            }
+        }
+    }
+    public bool Win
+    {
+        get { return win; }
+        set 
+        {
+            win = value;
         }
     }
 }

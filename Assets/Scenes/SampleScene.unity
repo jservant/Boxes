@@ -238,7 +238,7 @@ Transform:
   m_Children:
   - {fileID: 415070760}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &304709238
 PrefabInstance:
@@ -583,59 +583,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 304709238}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &476062085
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 476062087}
-  - component: {fileID: 476062086}
-  m_Layer: 0
-  m_Name: GameController
-  m_TagString: GameController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &476062086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476062085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a55ee3dbc910114da66a106ce939547, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lose: 0
-  win: 0
-  losePanel: {fileID: 863129872}
-  winPanel: {fileID: 1620520770}
-  pressR: {fileID: 2065085462}
-  pressSpace: {fileID: 79526674}
-  scene:
-    m_Handle: 0
-  tiles: []
-  numOfTilesTouched: 0
---- !u!4 &476062087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476062085}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &566376472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3088122775231457019, guid: 862ca20be50b3344286c4204e02acf7c,
@@ -661,6 +608,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -807593783078785380, guid: a6a4708fea753be48ad222ac84a19963,
+        type: 3}
+      propertyPath: losePanel
+      value: 
+      objectReference: {fileID: 863129872}
+    - target: {fileID: -807593783078785380, guid: a6a4708fea753be48ad222ac84a19963,
+        type: 3}
+      propertyPath: winPanel
+      value: 
+      objectReference: {fileID: 1620520770}
+    - target: {fileID: -807593783078785380, guid: a6a4708fea753be48ad222ac84a19963,
+        type: 3}
+      propertyPath: pressR
+      value: 
+      objectReference: {fileID: 2065085462}
+    - target: {fileID: -807593783078785380, guid: a6a4708fea753be48ad222ac84a19963,
+        type: 3}
+      propertyPath: pressSpace
+      value: 
+      objectReference: {fileID: 79526674}
     - target: {fileID: 1519389624249137324, guid: a6a4708fea753be48ad222ac84a19963,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1162,7 +1129,7 @@ RectTransform:
   - {fileID: 2065085463}
   - {fileID: 79526675}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1828,5 +1795,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

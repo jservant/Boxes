@@ -5,25 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float distance;
-    public bool moveW; public bool moveE; public bool moveN; public bool moveS;
-    // For the sake of the last line being simple, pretend true and false have reverse meanings
-    public float time;
-    public bool canMove = true;
-    public bool won = false;
+    GameController gameC = new GameController();
     SpriteRenderer sr;
+    float distance = 1.25f;
+    bool moveW; bool moveE; bool moveN; bool moveS; // For the sake of this line being simple, pretend true and false have reverse meanings
+    [SerializeField] float time;
+    public bool canMove = true; // PUT IN GAME CONTROLLER
+
+    public GameObject losePanel;
+    public GameObject winPanel;
+    public GameObject pressR;
+    public GameObject pressSpace;
 
     private void Start()
     {
-        GameController gc = new GameController();
+        gameC.tiles = GameObject.FindGameObjectsWithTag("Tile"); // Makes an array of all tiles in scene
+        gameC.Lose = false;
+        gameC.Win = false;
         sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        //won = GameObject.FindWithTag("GameController").GetComponent<GameController>().win;
-        
-        if (won) canMove = false;
+        if (gameC.numOfTilesTouched == gameC.tiles.Length)
+        { 
+            gameC.Win = true; canMove = false;
+            winPanel.SetActive(true);
+            pressSpace.SetActive(true);
+        }
         if (canMove)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
@@ -43,7 +52,7 @@ public class PlayerController : MonoBehaviour
                 transform.position -= new Vector3(0, distance); moveS = false;
             }
         }
-        else if (!won)
+        else if (!gameC.Win)
         {
             time -= Time.deltaTime;
             if (time <= 0)
@@ -62,8 +71,9 @@ public class PlayerController : MonoBehaviour
             if (time <= -1.5f)
             {
                 time = -1.5f;
-                GameObject.FindWithTag("GameController").GetComponent<GameController>().lose = true;
-                gameObject.SetActive(false);
+                gameC.Lose = true;
+                losePanel.SetActive(true);
+                pressR.SetActive(true);
             }
         }
         if (Input.GetKeyDown(KeyCode.R))
@@ -80,7 +90,6 @@ public class PlayerController : MonoBehaviour
         if (!moveS) moveS = true;
         // Movement is successful
         canMove = true; // Reenable movement
-
         time = 0;
     }
 

@@ -100,7 +100,8 @@ MonoBehaviour:
   moveE: 0
   moveN: 0
   moveS: 0
-  time: 0.02
+  time: 0
+  canMove: 1
 --- !u!50 &86452787389367162
 Rigidbody2D:
   serializedVersion: 4
