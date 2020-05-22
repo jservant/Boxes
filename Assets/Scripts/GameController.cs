@@ -7,8 +7,8 @@ public class GameController
     public GameObject[] tiles;
     private bool win = false;
     private bool lose = false;
-    [Space()]
-    public int numOfTilesTouched = 0;
+    public bool Move { get; set; } = true;
+    public int numOfTilesTouched;
 
     public bool Lose
     {
@@ -21,16 +21,18 @@ public class GameController
             lose = value;
             if (lose)
             {
-                GameObject.FindWithTag("Player").SetActive(false);
+                Debug.Log("dude you lost lol");
             }
         }
     }
+
     public bool Win
     {
         get { return win; }
         set 
         {
             win = value;
+            Move = false;
         }
     }
 }
