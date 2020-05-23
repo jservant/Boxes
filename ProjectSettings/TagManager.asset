@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tile
+  - Logo
+  - How To Play
+  - Press Space
   layers:
   - Default
   - TransparentFX
